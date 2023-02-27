@@ -19,6 +19,10 @@ public class Usuario {
     public String provincia;
     public String direccion;
 
+    @ManyToOne
+    @JoinColumn(name = "entrenoUsuario_id")
+    private EntrenoUsuario entrenoUsuario;
+
     public Usuario(int id, String nombre, String apellidos, String email, int telefono, String poblacion, String provincia, String direccion) {
         Id = id;
         this.nombre = nombre;

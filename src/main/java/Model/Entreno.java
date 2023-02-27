@@ -12,26 +12,27 @@ public class Entreno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToMany(mappedBy = "entreno")
-    private Set<Usuario> usuarios;
     public String estado;
 
     public String progreso;
     public String descripcion;
     public int inicio;
     public int fin;
+    @ManyToOne
+    @JoinColumn(name = "entrenoUsuario_id")
+    private EntrenoUsuario entrenoUsuario;
 
     public Entreno() {
     }
 
-    public Entreno(long id, Set<Usuario> usuarios, String estado, String progreso, String descripcion, int inicio, int fin) {
+    public Entreno(long id, String estado, String progreso, String descripcion, int inicio, int fin, EntrenoUsuario entrenoUsuario) {
         this.id = id;
-        this.usuarios = usuarios;
         this.estado = estado;
         this.progreso = progreso;
         this.descripcion = descripcion;
         this.inicio = inicio;
         this.fin = fin;
+        this.entrenoUsuario = entrenoUsuario;
     }
 
     public long getId() {
@@ -40,14 +41,6 @@ public class Entreno {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public Set<Usuario> getUsuarios() {
-        return usuarios;
-    }
-
-    public void setUsuarios(Set<Usuario> usuarios) {
-        this.usuarios = usuarios;
     }
 
     public String getEstado() {
@@ -88,5 +81,13 @@ public class Entreno {
 
     public void setFin(int fin) {
         this.fin = fin;
+    }
+
+    public EntrenoUsuario getEntrenoUsuario() {
+        return entrenoUsuario;
+    }
+
+    public void setEntrenoUsuario(EntrenoUsuario entrenoUsuario) {
+        this.entrenoUsuario = entrenoUsuario;
     }
 }
