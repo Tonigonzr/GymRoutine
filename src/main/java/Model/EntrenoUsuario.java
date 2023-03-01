@@ -26,6 +26,7 @@ private List<Entreno> entrenos;
 
     }
 
+
     public Long getId() {
         return id;
     }

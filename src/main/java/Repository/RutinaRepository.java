@@ -1,6 +1,7 @@
 package Repository;
 
+import Model.Rutina;
 import org.springframework.data.repository.CrudRepository;
 
-public interface RutinaRepository extends CrudRepository<RutinaRepository, Long> {
+public interface RutinaRepository extends CrudRepository<Rutina, Long> {
 }

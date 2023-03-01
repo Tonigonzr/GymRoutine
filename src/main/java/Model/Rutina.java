@@ -9,7 +9,7 @@ public class Rutina {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @ManyToMany(mappedBy = "rutina",cascade = CascadeType.ALL)
     public List<Usuario> usuario;
@@ -17,22 +17,17 @@ public class Rutina {
 
     public String img;
 
-    public Rutina(int id, List<Usuario> usuario, String nombre, String img) {
-        this.id = id;
-        this.usuario = usuario;
-        this.nombre = nombre;
-        this.img = img;
-    }
+
 
     public Rutina() {
 
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -10,7 +10,7 @@ public class Entreno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     public String estado;
 

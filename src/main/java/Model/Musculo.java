@@ -5,12 +5,11 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "musculos")
 public class Musculo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     public String nombre;
 
@@ -31,7 +30,7 @@ public class Musculo {
     }
 
 
-    public Musculo(int id, String nombre, Grupo grupos) {
+    public Musculo(Long id, String nombre, Grupo grupos) {
         this.id = id;
         this.nombre = nombre;
         this.grupos = grupos;
@@ -41,11 +40,11 @@ public class Musculo {
 
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

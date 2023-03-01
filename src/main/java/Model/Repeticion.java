@@ -8,7 +8,7 @@ public class Repeticion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn
@@ -22,7 +22,7 @@ public class Repeticion {
     public int repeticiones;
     public int peso;
 
-    public Repeticion(long id, Rutina rutina, Ejercicio ejercicio, int series, int repeticiones, int peso) {
+    public Repeticion(Long id, Rutina rutina, Ejercicio ejercicio, int series, int repeticiones, int peso) {
         this.id = id;
         this.rutina = rutina;
         this.ejercicio = ejercicio;
@@ -35,11 +35,11 @@ public class Repeticion {
 
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

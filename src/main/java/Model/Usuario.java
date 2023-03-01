@@ -8,7 +8,7 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    private Long Id;
     public String nombre;
 
     public String apellidos;
@@ -23,7 +23,7 @@ public class Usuario {
     @JoinColumn(name = "entrenoUsuario_id")
     private EntrenoUsuario entrenoUsuario;
 
-    public Usuario(int id, String nombre, String apellidos, String email, int telefono, String poblacion, String provincia, String direccion) {
+    public Usuario(Long id, String nombre, String apellidos, String email, int telefono, String poblacion, String provincia, String direccion, EntrenoUsuario entrenoUsuario) {
         Id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -32,17 +32,18 @@ public class Usuario {
         this.poblacion = poblacion;
         this.provincia = provincia;
         this.direccion = direccion;
+        this.entrenoUsuario = entrenoUsuario;
     }
 
     public Usuario() {
 
     }
 
-    public int getId() {
+    public Long getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         Id = id;
     }
 
@@ -100,5 +101,13 @@ public class Usuario {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public EntrenoUsuario getEntrenoUsuario() {
+        return entrenoUsuario;
+    }
+
+    public void setEntrenoUsuario(EntrenoUsuario entrenoUsuario) {
+        this.entrenoUsuario = entrenoUsuario;
     }
 }
