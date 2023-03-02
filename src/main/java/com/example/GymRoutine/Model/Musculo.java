@@ -1,8 +1,6 @@
-package Model;
+package com.example.GymRoutine.Model;
 
 import jakarta.persistence.*;
-
-import java.util.List;
 
 @Entity
 public class Musculo {

@@ -1,6 +1,6 @@
-package Repository;
+package com.example.GymRoutine.Repository;
 
-import Model.Ejercicio;
+import com.example.GymRoutine.Model.Ejercicio;
 import org.springframework.data.repository.CrudRepository;
 
 public interface EjercicioRepository extends CrudRepository<Ejercicio, Long> {

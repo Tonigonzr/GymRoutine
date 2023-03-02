@@ -1,6 +1,8 @@
-package Model;
+package com.example.GymRoutine.Model;
 
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "usuarios")
@@ -22,6 +24,9 @@ public class Usuario {
     @ManyToOne
     @JoinColumn(name = "entrenoUsuario_id")
     private EntrenoUsuario entrenoUsuario;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    public List<Rutina> rutina;
 
     public Usuario(Long id, String nombre, String apellidos, String email, int telefono, String poblacion, String provincia, String direccion, EntrenoUsuario entrenoUsuario) {
         Id = id;

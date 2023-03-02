@@ -1,6 +1,6 @@
-package Repository;
+package com.example.GymRoutine.Repository;
 
-import Model.Repeticion;
+import com.example.GymRoutine.Model.Repeticion;
 import org.springframework.data.repository.CrudRepository;
 
 public interface RepeticionRepository extends CrudRepository<Repeticion, Long> {
